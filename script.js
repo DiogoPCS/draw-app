@@ -126,6 +126,10 @@
       if (!url) return;
       overlay.src = url;
     });
+    function setImageLibrary(url){
+      if (!url) return;
+      overlay.src = url;
+    }
 
     // --------- Sliders ----------
     $('#opacity').addEventListener('input', e => { state.opacity = parseFloat(e.target.value); applyTransform(); });

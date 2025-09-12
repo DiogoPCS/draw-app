@@ -4,9 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>AR Tracing – Câmera + Desenho Sobreposto</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
@@ -44,6 +43,14 @@
               <button id="btnLoadUrl">Carregar</button>
             </div>
           </div>
+          <div>
+            <label for="imgLibrary">Biblioteca:</label>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnLoadLibrary">
+                Carregar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -79,6 +86,29 @@
     </div>
 
     <div id="hint">Dica: fixe o celular no tripé acima do papel. Ajuste o zoom e a opacidade até o traço ficar confortável.</div>
+  </div>
+
+  <!-- Modal da biblioteca -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Selecione uma imagem</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="outline: 1px solid green;">
+
+          <img src="./images/baleia.jpg" width="30%" onclick="setImageLibrary('./images/baleia.jpg')">
+          <img src="./images/carangueijo.jpg" width="30%" onclick="setImageLibrary('./images/carangueijo.jpg')">
+          <img src="./images/carangueijo.jpg" width="30%" onclick="setImageLibrary('./images/carangueijo.jpg')">
+
+          <img src="./images/cat.jpg" width="30%" onclick="setImageLibrary('./images/cat.jpg')">
+          <img src="./images/cat2.jpg" width="30%" onclick="setImageLibrary('./images/cat2.jpg')">
+          <img src="./images/cenoura.jpg" width="30%" onclick="setImageLibrary('./images/cenoura.jpg')">
+          
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="./script.js"></script>
