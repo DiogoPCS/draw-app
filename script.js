@@ -9,6 +9,7 @@
     let devices = [];
     let deviceIndex = 0;
     let wakeLock = null;
+    toggleWakeLock();
 
     const state = {
       x: 0, y: 0, scale: 1, rotate: 0, flipH: 1, flipV: 1, opacity: 0.5, blend: 'normal',

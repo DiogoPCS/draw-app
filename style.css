@@ -16,25 +16,47 @@ html, body { height: 100%; margin: 0; background: #000; font-family: system-ui, 
 /* UI */
 #controls { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px; display: grid; gap: 8px; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.35) 25%, rgba(0,0,0,.6)); }
 .card { background: var(--ui-bg); color: var(--ui-fg); border-radius: 14px; padding: 10px; backdrop-filter: blur(7px); box-shadow: 0 4px 20px rgba(0,0,0,.35); }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.row1 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
 label { font-size: 12px; opacity: .9; }
 input[type="range"] { width: 100%; }
 input[type="file"], input[type="text"] { width: 100%; }
-button { cursor: pointer; background: #111827; color: var(--ui-fg); border: 1px solid #30363d; padding: 10px 12px; border-radius: 12px; font-weight: 600; }
-button.primary { background: #0b4; border-color: #0b4; }
+
+button { 
+    cursor: pointer; 
+    background: #111827; 
+    color: var(--ui-fg); 
+    border: 1px solid #30363d;
+    padding: 4px 6px; 
+    border-radius: 4px; 
+    font-weight: 600; 
+    font-size: 0.7rem;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+button.primary { 
+    background: #0b4; 
+    border-color: #0b4; 
+}
+
+button.secondary { 
+    background: #0041bb; 
+    border-color: #0041bb; 
+}
+
 button.ghost { background: transparent; }
 button:active { transform: translateY(1px); }
 .thin { font-weight: 500; opacity: .9; }
-.pill { display: inline-flex; gap: 6px; align-items: center; padding: 8px 10px; border-radius: 999px; background: #0b0b0b; border: 1px solid #2a2a2a; }
-.spaced { display: flex; gap: 8px; flex-wrap: wrap; }
+.pill { display: inline-flex; gap: 6px; align-items: center; color: red; font-size: 0.7rem;}
+/* .spaced { display: flex; gap: 8px; flex-wrap: wrap; } */
 
-#topbar { position: absolute; top: 8px; left: 8px; right: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
+/* #topbar { position: absolute; top: 8px; left: 8px; right: 8px; display: flex; gap: 8px; flex-wrap: wrap; } */
 
 /* Dicas flutuantes */
 #hint { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(0,0,0,.45); padding: 10px 14px; border-radius: 10px; text-align: center; display: none; }
 
 @media (min-width: 720px) {
     #controls { max-width: 860px; margin: 0 auto; }
-    #topbar { max-width: 860px; margin: 0 auto; left: 0; right: 0; }
+    /* #topbar { max-width: 860px; margin: 0 auto; left: 0; right: 0; } */
 }

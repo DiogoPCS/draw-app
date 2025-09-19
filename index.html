@@ -9,29 +9,57 @@
 </head>
 <body>
   <div id="app">
-    <video id="video" class="layer" autoplay playsinline muted></video>
+    <video id="video" class="layer" autoplay playsinline muted style="z-index: -1;"></video>
 
     <!-- Imagem sobreposta -->
     <div id="overlayWrapper" class="layer" aria-label="Área da imagem sobreposta">
       <img id="overlay" alt="Desenho sobreposto" />
     </div>
 
-    <!-- Topbar: câmera/visão -->
-    <div id="topbar">
-      <div class="pill"><span>🎥</span><span class="thin" id="camStatus">Câmera parada</span></div>
-      <div class="spaced">
-        <button id="btnStart" class="primary">Abrir câmera (traseira)</button>
-        <button id="btnSwitch">Trocar câmera</button>
-        <button id="btnFullscreen" class="ghost">Tela cheia</button>
-        <button id="btnWake" class="ghost">Manter tela ligada</button>
-        <button id="btnMirror" class="ghost">Espelhar vídeo</button>
+    <div class="container-fluid fixed-top">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-6">
+          <div class="row">
+            <div class="col d-flex align-items-center">
+              <img src="https://cdn3.iconfinder.com/data/icons/buttons-1/512/Gear.png" width="40px" height="40px" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+              <div class="pill"><span>🎥</span><span class="thin" id="camStatus">Câmera parada</span></div>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Controles -->
+    <div class="card fixed-bottom">
+        <div class="spaced">
+          <span class="thin">Arraste com um dedo para mover. Use pinça (2 dedos) para zoom/rotação do desenho.</span>
+          <span class="thin">Dica: fixe o celular no tripé acima do papel. Ajuste o zoom e a opacidade até o traço ficar confortável.</span>
+        </div>
+      </div>
+  </div>
+
+  <!-- OffCanvas de Configuração -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <button id="btnStart" class="primary">Abrir câmera traseira</button>
+      <!-- Topbar: câmera/visão -->
+      <div id="topbar">
+        <div class="spaced">
+          <button id="btnSwitch">Trocar câmera</button>
+          <button id="btnFullscreen" class="ghost">Tela cheia</button>
+          <button id="btnWake" class="ghost">Manter tela ligada</button>
+          <button id="btnMirror" class="ghost">Espelhar vídeo</button>
+        </div>
+      </div>
+
+      <!-- Controles -->
     <div id="controls">
       <div class="card">
-        <div class="row">
+        <div class="row1">
           <div>
             <label for="file">Imagem sobreposta (PNG recomendado):</label>
             <input id="file" type="file" accept="image/*" />
@@ -77,15 +105,8 @@
           <button id="btnCenter">Centralizar</button>
         </div>
       </div>
-
-      <div class="card">
-        <div class="spaced">
-          <span class="thin">Arraste com um dedo para mover. Use pinça (2 dedos) para zoom/rotação do desenho.</span>
-        </div>
-      </div>
     </div>
-
-    <div id="hint">Dica: fixe o celular no tripé acima do papel. Ajuste o zoom e a opacidade até o traço ficar confortável.</div>
+    </div>
   </div>
 
   <!-- Modal da biblioteca -->
@@ -111,7 +132,10 @@
     </div>
   </div>
 
-  <script src="./script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+<script src="./script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 </body>
 </html>
