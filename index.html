@@ -20,20 +20,39 @@
       <div class="row d-flex justify-content-center">
         <div class="col-6 text-start p-2">
           <img src="https://cdn3.iconfinder.com/data/icons/49handdrawing/256x256/configuration.png" width="40px" height="40px" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-          <div class="pill"><span>🎥</span><span class="thin" id="camStatus">Câmera parada</span></div>
         </div>
         <div class="col-6 text-end p-2">
-          <img src="https://cdn3.iconfinder.com/data/icons/49handdrawing/256x256/file.png" width="35px" height="35px" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnLoadLibrary">
         </div>
       </div>
     </div>
 
-    <div class="card fixed-bottom">
-        <div class="spaced">
-          <span class="thin">Use your finger to move/rotate/zoom.</span>
-          <span class="thin">Tip: secure your phone in a cup above the paper.</span>
+    
+    <div class="row fixed-bottom">
+      <div class="col-6 d-flex justify-content-center align-items-center">
+        <div class="pill"><span>🎥</span><span class="thin" id="camStatus">Câmera parada</span></div>
+      </div>
+      <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+        <label for="opacity">Opacidade: <span id="opacityVal">0.50</span></label>
+        <input id="opacity" type="range" min="0" max="1" step="0.01" value="0.5" />
+      </div>
+      <div class="col-12">
+        <div class="card">
+          <div class="row">
+            <div class="col-6">
+              <button id="btnStart" class="primary">Abrir câmera traseira</button>
+            </div>        
+            <div class="col-6">
+              <button id="btnStart" class="secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnLoadLibrary">Carregar da Bilioteca</button>
+            </div>
+          </div>
+            <!-- <div class="spaced">
+              <span class="thin">Use your finger to move/rotate/zoom.</span>
+              <span class="thin">Tip: secure your phone in a cup above the paper.</span>
+            </div> -->
         </div>
       </div>
+    </div>
+
   </div>
 
   <!-- OffCanvas de Configuração -->
@@ -46,7 +65,7 @@
       <div class="row">
         
         <div class="col-12 p-2">
-          <button id="btnStart" class="primary">Abrir câmera traseira</button>
+          
         </div>
         
         <div class="col-12">
@@ -91,8 +110,8 @@
             <div class="card">
               <div class="row">
                 <div class="col-12">
-                  <label for="opacity">Opacidade: <span id="opacityVal">0.50</span></label>
-                  <input id="opacity" type="range" min="0" max="1" step="0.01" value="0.5" />
+                  <!-- <label for="opacity">Opacidade: <span id="opacityVal">0.50</span></label>
+                  <input id="opacity" type="range" min="0" max="1" step="0.01" value="0.5" /> -->
                 </div>
                 <div>
                   <label for="scale">Tamanho (zoom): <span id="scaleVal">1.00×</span></label>
