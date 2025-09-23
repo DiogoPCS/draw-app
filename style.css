@@ -33,6 +33,7 @@ button {
     font-size: 0.7rem;
     margin-right: 4px;
     margin-left: 4px;
+    width: 100%;
 }
 
 button.primary { 
@@ -47,7 +48,7 @@ button.secondary {
 
 button.ghost { background: transparent; }
 button:active { transform: translateY(1px); }
-.thin { font-weight: 500; opacity: .9; }
+.thin { opacity: .9; font-size: 0.7rem; }
 .pill { display: inline-flex; gap: 6px; align-items: center; color: red; font-size: 0.7rem;}
 /* .spaced { display: flex; gap: 8px; flex-wrap: wrap; } */
 

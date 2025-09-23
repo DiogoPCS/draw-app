@@ -18,22 +18,20 @@
 
     <div class="container-fluid fixed-top">
       <div class="row d-flex justify-content-center">
-        <div class="col-12 col-lg-6">
-          <div class="row">
-            <div class="col d-flex align-items-center">
-              <img src="https://cdn3.iconfinder.com/data/icons/buttons-1/512/Gear.png" width="40px" height="40px" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-              <div class="pill"><span>🎥</span><span class="thin" id="camStatus">Câmera parada</span></div>
-            </div>
-            </div>
-          </div>
+        <div class="col-6 text-start p-2">
+          <img src="https://cdn3.iconfinder.com/data/icons/49handdrawing/256x256/configuration.png" width="40px" height="40px" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <div class="pill"><span>🎥</span><span class="thin" id="camStatus">Câmera parada</span></div>
+        </div>
+        <div class="col-6 text-end p-2">
+          <img src="https://cdn3.iconfinder.com/data/icons/49handdrawing/256x256/file.png" width="35px" height="35px" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnLoadLibrary">
         </div>
       </div>
     </div>
 
     <div class="card fixed-bottom">
         <div class="spaced">
-          <span class="thin">Arraste com um dedo para mover. Use pinça (2 dedos) para zoom/rotação do desenho.</span>
-          <span class="thin">Dica: fixe o celular no tripé acima do papel. Ajuste o zoom e a opacidade até o traço ficar confortável.</span>
+          <span class="thin">Use your finger to move/rotate/zoom.</span>
+          <span class="thin">Tip: secure your phone in a cup above the paper.</span>
         </div>
       </div>
   </div>
@@ -41,71 +39,88 @@
   <!-- OffCanvas de Configuração -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Draw App</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <button id="btnStart" class="primary">Abrir câmera traseira</button>
-      <!-- Topbar: câmera/visão -->
-      <div id="topbar">
-        <div class="spaced">
+      <div class="row">
+        
+        <div class="col-12 p-2">
+          <button id="btnStart" class="primary">Abrir câmera traseira</button>
+        </div>
+        
+        <div class="col-12">
+          <hr>
+        </div>
+        
+        <div class="col-12 p-2">
           <button id="btnSwitch">Trocar câmera</button>
           <button id="btnFullscreen" class="ghost">Tela cheia</button>
           <button id="btnWake" class="ghost">Manter tela ligada</button>
           <button id="btnMirror" class="ghost">Espelhar vídeo</button>
         </div>
-      </div>
 
-      <!-- Controles -->
-    <div id="controls">
-      <div class="card">
-        <div class="row1">
-          <div>
-            <label for="file">Imagem sobreposta (PNG recomendado):</label>
-            <input id="file" type="file" accept="image/*" />
+        <div class="col-12">
+          <hr>
+        </div>
+
+        <div class="-col-12 p-2">
+          <button type="button" class="secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnLoadLibrary">
+            Desenhos da biblioteca
+          </button>
+        </div>
+
+        <div class="col-12 p-2">
+          <label for="file">Escolher imagem do dispositivo:</label>
+          <input id="file" type="file" accept="image/*" />
+        </div>
+
+        <div class="col-12 p-2">
+          <label for="imgUrl">…ou URL da imagem:</label>
+          <div style="display:flex; gap:6px;">
+            <input id="imgUrl" type="text" placeholder="https://…/desenho.png" />
+            <button id="btnLoadUrl">Carregar</button>
           </div>
-          <div>
-            <label for="imgUrl">…ou URL da imagem:</label>
-            <div style="display:flex; gap:6px;">
-              <input id="imgUrl" type="text" placeholder="https://…/desenho.png" />
-              <button id="btnLoadUrl">Carregar</button>
+        </div>
+
+
+
+        <div class="col-12 p-2">
+          <div id="controls">
+
+            <div class="card">
+              <div class="row">
+                <div class="col-12">
+                  <label for="opacity">Opacidade: <span id="opacityVal">0.50</span></label>
+                  <input id="opacity" type="range" min="0" max="1" step="0.01" value="0.5" />
+                </div>
+                <div>
+                  <label for="scale">Tamanho (zoom): <span id="scaleVal">1.00×</span></label>
+                  <input id="scale" type="range" min="0.2" max="3" step="0.01" value="1" />
+                </div>
+                <div>
+                  <label for="rotate">Rotação: <span id="rotateVal">0°</span></label>
+                  <input id="rotate" type="range" min="-180" max="180" step="1" value="0" />
+                </div>
+              </div>
+              <div class="spaced" style="margin-top:8px;">
+                <button id="btnFlipH">Inverter horizontal</button>
+                <button id="btnFlipV">Inverter vertical</button>
+                <button id="btnBlend">Mistura: normal</button>
+                <button id="btnReset">Resetar</button>
+                <button id="btnCenter">Centralizar</button>
+              </div>
             </div>
           </div>
-          <div>
-            <label for="imgLibrary">Biblioteca:</label>
-            <div style="display:flex; gap:6px;">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btnLoadLibrary">
-                Carregar
-              </button>
-            </div>
-          </div>
         </div>
+
+
+
+
+
       </div>
 
-      <div class="card">
-        <div class="row3">
-          <div>
-            <label for="opacity">Opacidade: <span id="opacityVal">0.50</span></label>
-            <input id="opacity" type="range" min="0" max="1" step="0.01" value="0.5" />
-          </div>
-          <div>
-            <label for="scale">Tamanho (zoom): <span id="scaleVal">1.00×</span></label>
-            <input id="scale" type="range" min="0.2" max="3" step="0.01" value="1" />
-          </div>
-          <div>
-            <label for="rotate">Rotação: <span id="rotateVal">0°</span></label>
-            <input id="rotate" type="range" min="-180" max="180" step="1" value="0" />
-          </div>
-        </div>
-        <div class="spaced" style="margin-top:8px;">
-          <button id="btnFlipH">Inverter horizontal</button>
-          <button id="btnFlipV">Inverter vertical</button>
-          <button id="btnBlend">Mistura: normal</button>
-          <button id="btnReset">Resetar</button>
-          <button id="btnCenter">Centralizar</button>
-        </div>
-      </div>
-    </div>
+      
     </div>
   </div>
 
@@ -118,7 +133,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="outline: 1px solid green;">
-
           <img src="./images/baleia.jpg" width="30%" onclick="setImageLibrary('./images/baleia.jpg')">
           <img src="./images/carangueijo.jpg" width="30%" onclick="setImageLibrary('./images/carangueijo.jpg')">
           <img src="./images/carangueijo.jpg" width="30%" onclick="setImageLibrary('./images/carangueijo.jpg')">
@@ -126,7 +140,6 @@
           <img src="./images/cat.jpg" width="30%" onclick="setImageLibrary('./images/cat.jpg')">
           <img src="./images/cat2.jpg" width="30%" onclick="setImageLibrary('./images/cat2.jpg')">
           <img src="./images/cenoura.jpg" width="30%" onclick="setImageLibrary('./images/cenoura.jpg')">
-          
         </div>
       </div>
     </div>
